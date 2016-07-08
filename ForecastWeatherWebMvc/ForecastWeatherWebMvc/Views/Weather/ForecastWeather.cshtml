@@ -1,0 +1,63 @@
+﻿@model ForecastWeatherLibrary.DTO.Forecast
+
+@{
+    ViewBag.Title = "ForecastWeather";
+}
+
+
+@if (@Model.DaysInForecast == 1)
+{
+    <h2>Forecast Weather for 1 day</h2>
+}
+else
+{
+    <h2>Forecast Weather for @Model.DaysInForecast days</h2>
+}
+
+
+
+<div>
+    <p>
+        <label>Country: </label> @Model.City.Country
+        <br />
+        <label>City: </label> @Model.City.Name
+    </p>
+    
+</div>
+
+
+
+<div>
+    @for(int i = 1; i <= Model.DaysInForecast; i++)
+    {
+        <p>DAY @i</p>
+        <p>
+            <label>Temperature</label>
+            <br/>
+            <label>Min: </label> @Model.List[i-1].Temperature.Min
+            <br/>
+            <label>Max: </label> @Model.List[i-1].Temperature.Max
+            <br/>
+            <label>Morning: </label> @Model.List[i-1].Temperature.Morn
+            <br/>
+            <label>Day: </label> @Model.List[i-1].Temperature.Day
+            <br/>
+            <label>Evening: </label> @Model.List[i-1].Temperature.Eve
+            <br/>
+            <label>Nigth: </label> @Model.List[i-1].Temperature.Night
+
+        </p>
+
+        <p>
+            <label>Main weather:</label> @Model.List[i-1].Weather[0].ShortDescription
+            <br/>
+            <label>Description:</label> @Model.List[i-1].Weather[0].Description
+        </p>
+
+    }
+
+</div>
+
+@Html.ActionLink("Back to choose city", "Index", "Weather")
+
+

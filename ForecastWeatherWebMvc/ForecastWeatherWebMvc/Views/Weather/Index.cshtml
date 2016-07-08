@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Forecast weather</h2>
+
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-sm-2">Choose city</label>
+            <select name="city" class="form-control">
+                <option value="kiev" selected>Kiev</option>
+                <option value="lviv">Lviv</option>
+                <option value="Kharkiv">Kharkiv</option>
+                <option value="Dnipropetrovsk">Dnipropetrovsk</option>
+                <option value="odessa">Odessa</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2">Search city</label>
+            <input type="search" class="form-control" name="searchcity"/>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2">Choose forecast</label>
+            <select name="days" class="form-control">
+                <option value="1" selected>Forecast for today</option>
+                <option value="3">Forecast for three days</option>
+                <option value="7">Forecast for seven days</option>
+            </select>
+        </div>
+
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Sabmit" class="btn btn-default"/>
+        </div>
+    </div>
+}
+
+
+
+
+
+
