@@ -8,9 +8,9 @@ namespace ForecastWeatherApp.Controllers
     {
         private readonly IWeatherForecastService _weatherForecastService;
 
-        public WeatherController()
+        public WeatherController(IWeatherForecastService weatherForecastService)
         {
-            _weatherForecastService = new WeatherForecastService();
+            _weatherForecastService = weatherForecastService;
         }
 
 
