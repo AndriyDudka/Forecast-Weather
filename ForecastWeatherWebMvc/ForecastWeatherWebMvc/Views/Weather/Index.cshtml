@@ -5,7 +5,7 @@
 <h2>Forecast weather</h2>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("ForecastWeather", "Weather"))
 {
     <div class="form-horizontal">
         <div class="form-group">
@@ -34,7 +34,8 @@
         </div>
 
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Sabmit" class="btn btn-default"/>
+            <input type="submit" name ="submit" value="See resoult" class="btn btn-default"/>
+            <input type="submit" name ="edit" value="Edit list of city" class="btn btn-default" />
         </div>
     </div>
 }
