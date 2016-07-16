@@ -1,0 +1,32 @@
+﻿@using ForecastWeatherLibrary.DTO
+@using Newtonsoft.Json
+@model List<ForecastWeatherApp.Models.HistoryOfSearch>
+@{
+    ViewBag.Title = "See History";
+}
+
+<h2>See History</h2>
+
+<table border="2">
+    <tr>
+        <td>Name</td>
+        <td>Date</td>
+        <td>Forecast</td>
+    </tr>
+    @foreach (var p in Model)
+    {
+        var forecast = JsonConvert.DeserializeObject<Forecast>(p.Json);
+        <tr>
+            <td>@forecast.City.Name</td>
+            <td>@p.Date</td>
+            <td>@Html.ActionLink("Forecast weather", "Forecast", p)</td>           
+        </tr>
+    }
+</table>
+
+
+
+<br/>
+<div>
+    @Html.ActionLink("Back to choose city", "SeeHistory")
+</div>

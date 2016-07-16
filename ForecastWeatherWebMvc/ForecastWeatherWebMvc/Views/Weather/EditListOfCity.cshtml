@@ -1,7 +1,29 @@
-﻿
+﻿@using ForecastWeatherApp.EntityContext
+
 @{
     ViewBag.Title = "EditListOfCity";
 }
 
 <h2>EditListOfCity</h2>
+
+@{
+    var context = new WeatherContext();
+    <table border="2">
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+        </tr>
+        @foreach (var p in context.Cities)
+        {
+            <tr>
+                <td>@p.Id</td>
+                <td>@p.Name</td>
+                <td>@Html.ActionLink("Delete", "Delete", new { name = p.Name })</td>
+            </tr>
+        }
+    </table>
+    <br/>
+}
+
+@Html.ActionLink("Create new", "Create", "Weather")
 

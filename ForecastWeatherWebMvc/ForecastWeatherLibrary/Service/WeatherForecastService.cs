@@ -3,6 +3,7 @@ using System.IO;
 using System.Net;
 using ForecastWeatherLibrary.DTO;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace ForecastWeatherLibrary.Service
 {
@@ -33,6 +34,7 @@ namespace ForecastWeatherLibrary.Service
                         return null;
 
                     Forecast forecast = JsonConvert.DeserializeObject<Forecast>(json);
+                   
                     return forecast;
                 }
             }

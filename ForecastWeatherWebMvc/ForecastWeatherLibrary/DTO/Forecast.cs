@@ -6,10 +6,10 @@ namespace ForecastWeatherLibrary.DTO
     public class Forecast
     {
         [JsonProperty("city")]
-        public City City { get; set; }      
+        public CityInformation City { get; set; }      
 
         [JsonProperty("cnt")]
-        public int DaysInForecast { get; set; }
+        public int cnt { get; set; }
         
         [JsonProperty("list")]
         public List<DailyForecast> List { get; set; }

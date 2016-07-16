@@ -2,7 +2,7 @@
 
 namespace ForecastWeatherLibrary.DTO
 {
-    public class City
+    public class CityInformation
     {
         [JsonProperty("id")]
         public int Id { get; set; }

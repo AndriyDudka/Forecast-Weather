@@ -6,10 +6,10 @@ namespace ForecastWeatherLibrary.DTO
     public class DailyForecast
     {
         [JsonProperty("dt")]
-        public long Daytime { get; set; } //UNIX TIME.
+        public long dt { get; set; } //UNIX TIME.
 
         [JsonProperty("temp")]
-        public Temp Temperature { get; set; }
+        public Temp Temp { get; set; }
 
         [JsonProperty("pressure")]
         public double Pressure { get; set; }
@@ -24,7 +24,7 @@ namespace ForecastWeatherLibrary.DTO
         public double Speed { get; set; }
 
         [JsonProperty("deg")]
-        public int Degrees { get; set; }
+        public int Deg { get; set; }
 
         [JsonProperty("clouds")]
         public int Clouds { get; set; }

@@ -1,5 +1,6 @@
-﻿@{
-    ViewBag.Title = "Index";
+﻿@using ForecastWeatherApp.EntityContext
+@using ForecastWeatherApp.Models
+@{
 }
 
 <h2>Forecast weather</h2>
@@ -11,11 +12,15 @@
         <div class="form-group">
             <label class="control-label col-sm-2">Choose city</label>
             <select name="city" class="form-control">
-                <option value="kiev" selected>Kiev</option>
-                <option value="lviv">Lviv</option>
-                <option value="Kharkiv">Kharkiv</option>
-                <option value="Dnipropetrovsk">Dnipropetrovsk</option>
-                <option value="odessa">Odessa</option>
+                @{
+                    using (var context = new WeatherContext())
+                    {                     
+                        foreach (var p in context.Cities)
+                        {
+                            <option value=@p.Name>@p.Name</option>
+                        }
+                    }
+                }
             </select>
         </div>
 
@@ -34,8 +39,8 @@
         </div>
 
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" name ="submit" value="See resoult" class="btn btn-default"/>
-            <input type="submit" name ="edit" value="Edit list of city" class="btn btn-default" />
+            <input type="submit" name="submit" value="See resoult" class="btn btn-default"/>
+            <input type="submit" name="edit" value="Edit list of city" class="btn btn-default"/>
         </div>
     </div>
 }

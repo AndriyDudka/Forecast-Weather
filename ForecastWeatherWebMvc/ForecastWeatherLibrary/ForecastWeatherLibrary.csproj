@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTO\City.cs" />
+    <Compile Include="DTO\CityInformation.cs" />
     <Compile Include="DTO\Coord.cs" />
     <Compile Include="DTO\Forecast.cs" />
     <Compile Include="DTO\DailyForecast.cs" />
