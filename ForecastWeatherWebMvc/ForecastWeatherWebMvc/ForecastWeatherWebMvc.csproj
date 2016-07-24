@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -132,9 +133,10 @@
     <Compile Include="Controllers\HistoryOfSearchController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\WeatherController.cs" />
+    <Compile Include="EntityService\IWeatherService.cs" />
     <Compile Include="EntityContext\WeatherContext.cs" />
     <Compile Include="EntityContext\WeatherContextInitializer.cs" />
-    <Compile Include="EntityContext\WeatherLogic.cs" />
+    <Compile Include="EntityService\WeatherService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
