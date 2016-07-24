@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
 using ForecastWeatherApp.EntityContext;
@@ -29,11 +30,11 @@ namespace ForecastWeatherApp.Controllers
 
         // POST: /Weather/ForecastWeather
         [HttpPost]
-        public ActionResult ForecastWeather(int days, string city, string searchcity, string submit, string edit)
+        public async Task<ActionResult> ForecastWeather(int days, string city, string searchcity, string submit, string edit)
         {          
             Forecast forecast = string.IsNullOrEmpty(searchcity)
-                ? _weatherForecastService.GetForecast(city, days)
-                : _weatherForecastService.GetForecast(searchcity, days);
+                ? await _weatherForecastService.GetForecast(city, days)
+                : await _weatherForecastService.GetForecast(searchcity, days);
 
             using (var context = new WeatherContext())
             {

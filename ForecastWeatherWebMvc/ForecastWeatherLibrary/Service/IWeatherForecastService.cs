@@ -9,6 +9,6 @@ namespace ForecastWeatherLibrary.Service
 {
     public interface IWeatherForecastService
     {
-        Forecast GetForecast(string city, int days);
+        Task<Forecast> GetForecast(string city, int days);
     }
 }
